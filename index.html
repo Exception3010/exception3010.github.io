@@ -1,10 +1,190 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>My Personal Site</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Hazem Oukal — Computer Engineering Student</title>
+    <meta name="description" content="Personal site of Hazem Oukal — projects, writing, resume, and contact.">
+    <style>
+        :root {
+            --bg: #0b0f14;
+            --panel: #0f141b;
+            --text: #e6edf3;
+            --muted: #9fb0c0;
+            --brand: #3da9fc;
+            --brand-2: #90b4ce;
+            --border: #1b2632;
+            --ok: #2ecc71;
+            --warn: #f1c40f;
+        }
+        * { box-sizing: border-box; }
+        html, body { height: 100%; }
+        body {
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji",sans-serif;
+            background: radial-gradient(1200px 800px at 10% -10%, #112236 0, transparent 40%),
+                        radial-gradient(1000px 600px at 100% 10%, #101b2a 0, transparent 50%),
+                        var(--bg);
+            background-repeat: no-repeat, no-repeat, no-repeat;
+            color: var(--text);
+            line-height: 1.6;
+        }
+        html { scroll-behavior: smooth; }
+        a { color: var(--brand); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        .container { max-width: 1000px; margin: 0 auto; padding: 0 clamp(12px, 4vw, 24px); }
+
+        /* Header / Nav */
+        header { position: sticky; top: 0; z-index: 10; background: rgba(11,15,20,0.8); backdrop-filter: blur(8px); border-bottom: 1px solid var(--border); }
+        .nav { display: flex; align-items: center; justify-content: space-between; padding-top: 10px; padding-bottom: 10px; }
+        .brand { font-weight: 700; letter-spacing: 0.3px; }
+        .brand small { color: var(--brand-2); font-weight: 500; margin-left: 8px; }
+        .nav ul { display: flex; gap: 18px; list-style: none; margin: 0; padding: 0; }
+        .nav a { color: var(--text); opacity: .9; }
+        .nav a:hover { opacity: 1; color: var(--brand); }
+
+        /* Hero */
+        .hero { padding: 64px 0 36px; border-bottom: 1px solid var(--border); }
+        .hero h1 { font-size: clamp(28px, 5vw, 40px); line-height: 1.15; margin: 0 0 10px; }
+        .tagline { color: var(--brand-2); font-weight: 600; margin-bottom: 16px; }
+        .bio { max-width: 780px; color: var(--muted); }
+        .cta { margin-top: 20px; display: flex; gap: 12px; flex-wrap: wrap; }
+        .btn { display: inline-block; padding: 10px 14px; border-radius: 10px; border: 1px solid var(--border); background: var(--panel); color: var(--text); font-weight: 600; }
+        .btn:hover { border-color: var(--brand); text-decoration: none; }
+        .btn.primary { background: linear-gradient(180deg, #1287f0, #0e6cc3); border-color: #0e6cc3; }
+
+        /* Sections */
+        section { padding: 36px 0; border-bottom: 1px solid var(--border); scroll-margin-top: 72px; }
+        section h2 { margin: 0 0 10px; font-size: clamp(20px, 3.2vw, 24px); }
+        section p.lead { margin: 0 0 18px; color: var(--muted); }
+
+        /* Grid cards */
+        .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+        .card { background: rgba(15,20,27,0.65); border: 1px solid var(--border); border-radius: 12px; padding: 16px; }
+        .card h3 { margin: 0 0 6px; font-size: 18px; }
+
+        /*noinspection CssUnusedSymbol*/
+        .meta { color: var(--brand-2); font-size: 13px; margin-bottom: 6px; }
+        .muted { color: var(--muted); }
+        .empty { border: 1px dashed var(--border); background: transparent; text-align: center; color: var(--muted); }
+
+        /* Skills */
+        .skills { display: flex; flex-wrap: wrap; gap: 10px; }
+        .badge { border: 1px solid var(--border); background: var(--panel); color: var(--text); border-radius: 999px; padding: 6px 10px; font-weight: 600; font-size: 13px; }
+
+        /* Footer */
+        footer { padding: 26px 0 60px; color: var(--muted); }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 760px) {
+            .nav { flex-direction: column; align-items: flex-start; gap: 4px; padding-top: 8px; padding-bottom: 8px; }
+            .nav ul { flex-wrap: wrap; row-gap: 4px; }
+        }
+        @media (max-width: 640px) {
+            .grid { grid-template-columns: 1fr; }
+        }
+    </style>
+    <link rel="icon" href="data:,">
+    <meta name="theme-color" content="#0b0f14">
 </head>
 <body>
-<h1>Hello, world!</h1>
-<p>This is my first site.</p>
+    <header>
+        <div class="container nav">
+            <div class="brand">Hazem Oukal <small>Computer Engineering Student</small></div>
+            <nav aria-label="Primary">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#blog">Blog</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section id="home" class="hero" aria-labelledby="home-title">
+            <h1 id="home-title">Hazem Oukal</h1>
+            <div class="tagline">Computer Engineering student</div>
+            <p class="bio">
+                I’m a computer engineering student interested in systems, backend APIs, and developer tooling.
+                I enjoy shipping small, useful projects and writing about what I learn along the way.
+                I’m currently growing skills in Python, C, FastAPI, Docker, and cloud fundamentals.
+            </p>
+            <div class="cta">
+                <a class="btn primary" href="#projects">View Projects</a>
+                <a class="btn" href="#contact">Get in Touch</a>
+            </div>
+        </section>
+
+        <section id="projects" aria-labelledby="projects-title">
+            <h2 id="projects-title">Projects</h2>
+            <p class="lead">Public projects with concise descriptions, stack, and links.</p>
+            <div class="grid">
+                <div class="card empty">
+                    <p><strong>Coming soon.</strong></p>
+                </div>
+            </div>
+        </section>
+
+        <section id="blog" aria-labelledby="blog-title">
+            <h2 id="blog-title">Blog / Writing</h2>
+            <p class="lead">Notes on what I build and learn.</p>
+            <div class="grid">
+                <div class="card empty"><p>No posts yet. Drafts in progress.</p></div>
+            </div>
+        </section>
+
+
+        <section id="skills" aria-labelledby="skills-title">
+            <h2 id="skills-title">Skills</h2>
+            <p class="lead">A quick snapshot of tools I use.</p>
+            <div class="skills">
+                <span class="badge">Python</span>
+                <span class="badge">C</span>
+                <span class="badge">FastAPI</span>
+                <span class="badge">Docker</span>
+                <span class="badge">Git</span>
+                <span class="badge">Linux</span>
+                <span class="badge">SQL</span>
+                <span class="badge">REST APIs</span>
+            </div>
+        </section>
+
+        <section id="about" aria-labelledby="about-title">
+            <h2 id="about-title">About</h2>
+            <p class="lead">A little more background.</p>
+            <p class="muted">
+                I like building practical things and learning by doing—small utilities, APIs, and tools that make
+                workflows smoother. I care about clarity, reliability, and sharing what I learn to help others ramp faster.
+            </p>
+        </section>
+
+        <section id="contact" aria-labelledby="contact-title">
+            <h2 id="contact-title">Contact</h2>
+            <p class="lead">Reach out for collaborations or opportunities.</p>
+            <p>
+                Email: <a href="mailto:exception3010@gmail.com">exception3010@gmail.com</a>
+                <br>
+                GitHub: <a href="https://github.com/exception3010" rel="me">@exception3010</a>
+                <br>
+                LinkedIn: <a href="https://www.linkedin.com/in/hazem-oukal-3b4763374/">linkedin.com/in/hazem-oukal-3b4763374</a>
+            </p>
+        </section>
+    </main>
+
+
+    <footer class="container">
+        <div>
+            <span class="muted">© <span id="year"></span> Hazem Oukal. All rights reserved.</span>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear().toString();
+    </script>
 </body>
 </html>
