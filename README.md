@@ -1,2 +1,2 @@
 # exception3010.github.io
-My personal site on github
+This is a test
