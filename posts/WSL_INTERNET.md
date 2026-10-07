@@ -17,10 +17,8 @@ The fix is to configure WSL’s networking and DNS tunneling.
 Create or edit this file:
 
 ```
-
-C:\Users<YourUser>.wslconfig
-
-````
+C:\Users\<YourUser>\.wslconfig
+```
 
 Set the content to:
 
@@ -31,7 +29,7 @@ autoProxy=true
 
 [wsl2]
 networkingMode=mirrored
-````
+```
 
 Restart WSL:
 
