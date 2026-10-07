@@ -3,8 +3,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Hazem Oukal — Computer Engineering Student</title>
-    <meta name="description" content="Personal site of Hazem Oukal — projects, writing, resume, and contact.">
+    <title>Hazem Oukal — Computer Engineer</title>
+    <meta name="description" content="Hazem Oukal, computer engineer in Palestine building Flutter mobile apps and Django, FastAPI and ASP.NET Core backends; open to freelance and remote work.">
     <style>
         :root {
             --bg: #0b0f14;
@@ -93,7 +93,7 @@
 <body>
     <header>
         <div class="container nav">
-            <div class="brand">Hazem Oukal <small>Computer Engineering Student</small></div>
+            <div class="brand">Hazem Oukal <small>Computer Engineer</small></div>
             <nav aria-label="Primary">
                 <ul>
                     <li><a href="#home">Home</a></li>
@@ -108,11 +108,11 @@
     <main class="container">
         <section id="home" class="hero" aria-labelledby="home-title">
             <h1 id="home-title">Hazem Oukal</h1>
-            <div class="tagline">Computer Engineering student</div>
+            <div class="tagline">Computer Engineer · Full-stack developer (mobile + backend)</div>
             <p class="bio">
-                I’m a computer engineering student interested in systems, backend APIs, and developer tooling.
-                I enjoy shipping small, useful projects and writing about what I learn along the way.
-                I’m currently growing skills in Python, C, FastAPI, Docker, and cloud fundamentals.
+                I’m a computer engineer who builds mobile apps and the backends behind them, including a published Kotlin Android app on Google Play and, with a team, a multi-tenant ASP.NET Core API.
+                My stack is Flutter and Dart on the client, Python (Django, FastAPI) and .NET (ASP.NET Core) on the server, and PostgreSQL underneath.
+                I’m based in Palestine, open to freelance and remote work, and I write up what I learn along the way.
             </p>
             <div class="cta">
                 <a class="btn primary" href="#projects">View Projects</a>
@@ -122,10 +122,48 @@
 
         <section id="projects" aria-labelledby="projects-title">
             <h2 id="projects-title">Projects</h2>
-            <p class="lead">Public projects with concise descriptions, stack, and links.</p>
+            <p class="lead">Selected projects with concise descriptions, stack, and links.</p>
             <div class="grid">
-                <div class="card empty">
-                    <p><strong>Coming soon.</strong></p>
+                <div class="card">
+                    <h3>MultiTenantManagement</h3>
+                    <div class="meta">Team project • C# • ASP.NET Core 8 • PostgreSQL</div>
+                    <p class="muted">Multi-tenant ASP.NET Core 8 API where a system admin creates tenants and users, and tenant users manage products; a tenant_id JWT claim is enforced by a custom handler.</p>
+                    <p>
+                        <a href="https://github.com/Exception3010/MultiTenantManagement" rel="noopener">GitHub</a>
+                    </p>
+                </div>
+                <div class="card">
+                    <h3>Daftari</h3>
+                    <div class="meta">Android • Kotlin • Google Play</div>
+                    <p class="muted">Arabic debt ledger for shopkeepers to record customer debts and payments offline, with per-customer balances, statements and separate shekel, dinar and dollar ledgers.</p>
+                    <p>
+                        <a href="https://play.google.com/store/apps/details?id=com.exception.debts" rel="noopener">Google Play</a> ·
+                        <a href="https://exception3010.github.io/daftari-site/" rel="noopener">Website</a>
+                    </p>
+                </div>
+                <div class="card">
+                    <h3>TrendingTracker</h3>
+                    <div class="meta">Python • Django • SQLite</div>
+                    <p class="muted">Django tool for anyone who wants GitHub’s trending page in a database: one command scrapes it into SQLite and a read-only Django REST Framework endpoint serves the rows.</p>
+                    <p>
+                        <a href="https://github.com/Exception3010/TrendingTracker" rel="noopener">GitHub</a>
+                    </p>
+                </div>
+                <div class="card">
+                    <h3>shell2</h3>
+                    <div class="meta">C • POSIX • CMake</div>
+                    <p class="muted">Small UNIX-like shell in C, written to learn POSIX process control: in-process built-ins, fork/execvp launching, &amp; backgrounding, and &lt;, &gt; and &gt;&gt; redirection via dup2.</p>
+                    <p>
+                        <a href="https://github.com/Exception3010/shell2" rel="noopener">GitHub</a>
+                    </p>
+                </div>
+                <div class="card">
+                    <h3>Files</h3>
+                    <div class="meta">Android • Unreleased</div>
+                    <p class="muted">Android file manager for people who want their files to stay on the device: no internet permission, no ads, no analytics, no tracking and no accounts.</p>
+                    <p>
+                        <a href="https://exception3010.github.io/files-privacy-policy/" rel="noopener">Privacy policy</a>
+                    </p>
                 </div>
             </div>
         </section>
@@ -148,14 +186,19 @@
             <h2 id="skills-title">Skills</h2>
             <p class="lead">A quick snapshot of tools I use.</p>
             <div class="skills">
+                <span class="badge">Flutter</span>
+                <span class="badge">Dart</span>
+                <span class="badge">Kotlin</span>
                 <span class="badge">Python</span>
-                <span class="badge">C</span>
+                <span class="badge">Django</span>
                 <span class="badge">FastAPI</span>
-                <span class="badge">Docker</span>
-                <span class="badge">Git</span>
-                <span class="badge">Linux</span>
-                <span class="badge">SQL</span>
+                <span class="badge">C#</span>
+                <span class="badge">ASP.NET Core</span>
+                <span class="badge">PostgreSQL</span>
                 <span class="badge">REST APIs</span>
+                <span class="badge">JWT</span>
+                <span class="badge">C</span>
+                <span class="badge">Git</span>
             </div>
         </section>
 
