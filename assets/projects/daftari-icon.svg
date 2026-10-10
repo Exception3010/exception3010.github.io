@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 108 108" role="img" aria-label="دفتري">
+  <rect width="108" height="108" rx="24" fill="#0F766E"/>
+  <path fill="#FFFFFF" d="M34 26h42a5 5 0 0 1 5 5v46a5 5 0 0 1-5 5H34a5 5 0 0 1-5-5V31a5 5 0 0 1 5-5z"/>
+  <path fill="#0F766E" d="M38 26h5v56h-5z"/>
+  <path fill="#0F766E" d="M50 40h23v4.5H50z"/>
+  <path fill="#0F766E" d="M50 52h23v4.5H50z"/>
+  <path fill="#14B8A6" d="M50 64h14v4.5H50z"/>
+</svg>

@@ -86,6 +86,81 @@
         @media (max-width: 640px) {
             .grid { grid-template-columns: 1fr; }
         }
+
+        /* Projects: two pinned app cards with device shots, then icon cards */
+        #projects .featured { display: grid; grid-auto-rows: 1fr; gap: 16px; margin-bottom: 16px; }
+        #projects .grid .card { display: flex; flex-direction: column; }
+        #projects .grid .card h3 { overflow-wrap: anywhere; }
+        #projects .card p { margin: 0; }
+        #projects .grid .card p.muted { margin: 8px 0 6px; }
+        #projects .card p.links { margin-top: auto; margin-bottom: -6px; }
+        #projects .links a { display: inline-block; padding: 10px 0; }
+        #projects .tile { display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; margin-bottom: 12px; border: 1px solid var(--border); border-radius: 10px; background: var(--panel); color: var(--brand-2); }
+        #projects .tile svg { width: 22px; height: 22px; }
+
+        #projects .feature { --accent: var(--brand); --hero: 190px; --hero-show: 283px; --side: 150px; --side-show: 239px; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); padding: 0; overflow: hidden; }
+        #projects .feature-daftari { --accent: #14b8a6; }
+        #projects .feature-body { position: relative; z-index: 1; display: flex; flex-direction: column; min-width: 0; padding: 28px 8px 28px 28px; }
+        #projects .feature-head { display: flex; align-items: center; gap: 14px; margin-bottom: 14px; }
+        #projects .app-icon { display: block; flex: none; width: 56px; height: 56px; border-radius: 13px; }
+        #projects .feature-title { display: flex; flex-wrap: wrap; align-items: center; min-width: 0; }
+        #projects .feature h3 { margin: 0 10px 0 0; font-size: 24px; line-height: 1.25; }
+        #projects .feature .meta { flex-basis: 100%; margin: 2px 0 0; }
+        #projects .pin { display: inline-flex; align-items: center; padding: 2px 9px 2px 7px; border: 1px solid var(--border); border-radius: 999px; background: var(--panel); color: var(--brand-2); font-size: 11px; font-weight: 600; line-height: 1.6; letter-spacing: .06em; text-transform: uppercase; }
+        #projects .pin svg { width: 12px; height: 12px; margin-right: 5px; color: var(--accent); }
+        #projects .feature p.links { margin-bottom: -10px; padding-top: 6px; }
+
+        #projects .stage { position: relative; min-height: calc(var(--hero-show) + 28px); }
+        #projects .stage::before { content: ""; position: absolute; top: 0; right: 0; bottom: 0; left: -25%; background: radial-gradient(60% 105% at 60% 68%, var(--accent), transparent); opacity: .4; pointer-events: none; }
+        #projects .phone { --show: var(--hero-show); position: absolute; z-index: 2; top: calc(100% - var(--show)); left: calc(50% - var(--hero) / 2); width: var(--hero); padding: 5px; border-radius: 24px; background: var(--bg); box-shadow: inset 0 0 0 1px var(--border), 0 18px 40px rgba(0,0,0,.5); }
+        #projects .phone img { display: block; width: 100%; height: auto; border-radius: 19px; background: var(--panel); background: color-mix(in srgb, var(--accent) 24%, var(--panel)); }
+        #projects .phone::before { content: ""; position: absolute; z-index: 1; top: calc(var(--show) - 48px); right: 0; left: 0; height: 48px; background: linear-gradient(transparent, var(--bg)); opacity: .6; }
+        #projects .phone-side { --show: var(--side-show); z-index: 1; width: var(--side); border-radius: 20px; }
+        #projects .phone-side img { border-radius: 15px; }
+        #projects .phone-side::after { content: ""; position: absolute; top: 5px; right: 5px; bottom: 5px; left: 5px; border-radius: 15px; background: linear-gradient(to right, transparent 30%, var(--bg)); opacity: .36; }
+        #projects .phone-l { left: 14px; left: max(14px, calc(50% - 271px)); }
+        #projects .phone-r { left: auto; right: 14px; right: max(14px, calc(50% - 271px)); }
+        #projects .phone-r::after { background: linear-gradient(to left, transparent 30%, var(--bg)); }
+
+        @media (max-width: 900px) {
+            #projects .feature { --hero: 176px; --hero-show: 262px; --side: 132px; --side-show: 209px; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+            #projects .feature-body { padding: 24px 12px 24px 24px; }
+            #projects .stage { min-height: calc(var(--hero-show) + 24px); }
+            #projects .phone { border-radius: 22px; }
+            #projects .phone img { border-radius: 17px; }
+            #projects .phone-side { border-radius: 18px; }
+            #projects .phone-side img, #projects .phone-side::after { border-radius: 13px; }
+            #projects .phone-l { left: 10px; }
+            #projects .phone-r { right: 10px; }
+        }
+        @media (max-width: 780px) {
+            #projects .featured { grid-auto-rows: auto; }
+            #projects .feature { --hero: 190px; --hero-show: 283px; --side: 150px; --side-show: 239px; grid-template-columns: minmax(0, 1fr); grid-template-rows: 1fr auto; }
+            #projects .feature-body { padding: 20px 20px 12px; }
+            #projects .stage { min-height: 0; height: calc(var(--hero-show) + 20px); }
+            #projects .stage::before { top: -40px; right: -15%; left: -15%; background: radial-gradient(50% 75% at 50% 75%, var(--accent), transparent); }
+            #projects .phone { border-radius: 24px; }
+            #projects .phone img { border-radius: 19px; }
+            #projects .phone-side { border-radius: 20px; }
+            #projects .phone-side img, #projects .phone-side::after { border-radius: 15px; }
+            #projects .phone-l { left: 16px; left: max(16px, calc(50% - 271px)); }
+            #projects .phone-r { right: 16px; right: max(16px, calc(50% - 271px)); }
+        }
+        @media (max-width: 480px) {
+            #projects .feature { --hero: 176px; --hero-show: 262px; --side: 132px; --side-show: 209px; }
+            #projects .feature-body { padding: 16px 16px 8px; }
+            #projects .feature-head { margin-bottom: 12px; }
+            #projects .stage { height: calc(var(--hero-show) + 14px); }
+            #projects .phone { border-radius: 22px; }
+            #projects .phone img { border-radius: 17px; }
+            #projects .phone-side { border-radius: 18px; }
+            #projects .phone-side img, #projects .phone-side::after { border-radius: 13px; }
+            #projects .phone-l { left: 8px; }
+            #projects .phone-r { right: 8px; }
+        }
+        @media (max-width: 359px) {
+            #projects .phone-side { display: none; }
+        }
     </style>
     <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
     <link rel="icon" href="/assets/favicon-32.png" sizes="32x32" type="image/png">
@@ -129,46 +204,77 @@
         <section id="projects" aria-labelledby="projects-title">
             <h2 id="projects-title">Projects</h2>
             <p class="lead">Selected projects with concise descriptions, stack, and links.</p>
+            <div class="featured">
+                <div class="card feature feature-daftari">
+                    <div class="feature-body">
+                        <div class="feature-head">
+                            <img class="app-icon" src="assets/projects/daftari-icon.svg" width="56" height="56" loading="lazy" decoding="async" alt="Daftari app icon: a white ruled ledger on a teal square">
+                            <div class="feature-title">
+                                <h3>Daftari</h3>
+                                <span class="pin"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><g transform="rotate(35 12 12)"><path d="M9 3h6l-1 6 3.5 3.5V14h-11v-1.5L10 9z"/><path d="M12 14v7"/></g></svg>Featured</span>
+                                <div class="meta">Android • Kotlin • Google Play</div>
+                            </div>
+                        </div>
+                        <p class="muted">Arabic debt ledger for shopkeepers to record customer debts and payments offline, with per-customer balances, statements and separate shekel, dinar and dollar ledgers.</p>
+                        <p class="links">
+                            <a href="https://play.google.com/store/apps/details?id=com.exception.debts" rel="noopener">Google Play</a> ·
+                            <a href="https://exception3010.github.io/daftari-site/" rel="noopener">Website</a>
+                        </p>
+                    </div>
+                    <div class="stage" role="group" aria-label="Daftari screenshots">
+                        <div class="phone"><img src="assets/projects/daftari-home.webp" width="332" height="531" loading="lazy" decoding="async" alt="Daftari home screen in Arabic, showing the total owed in shekels, dinars and dollars above a list of the largest debtors"></div>
+                        <div class="phone phone-side phone-l"><img src="assets/projects/daftari-entry.webp" width="244" height="425" loading="lazy" decoding="async" alt="Daftari new debt screen in Arabic, with a shekel, dinar or dollar selector, a note field and a number pad"></div>
+                        <div class="phone phone-side phone-r"><img src="assets/projects/daftari-reports.webp" width="244" height="425" loading="lazy" decoding="async" alt="Daftari reports screen in Arabic, with totals per currency and a bar chart of activity over the period"></div>
+                    </div>
+                </div>
+                <div class="card feature feature-files">
+                    <div class="feature-body">
+                        <div class="feature-head">
+                            <img class="app-icon" src="assets/projects/files-icon.webp" width="56" height="56" loading="lazy" decoding="async" alt="Files app icon: a white folder on a blue square">
+                            <div class="feature-title">
+                                <h3>Files</h3>
+                                <span class="pin"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><g transform="rotate(35 12 12)"><path d="M9 3h6l-1 6 3.5 3.5V14h-11v-1.5L10 9z"/><path d="M12 14v7"/></g></svg>Featured</span>
+                                <div class="meta">Android • Unreleased</div>
+                            </div>
+                        </div>
+                        <p class="muted">Android file manager for people who want their files to stay on the device: no internet permission, no ads, no analytics, no tracking and no accounts.</p>
+                        <p class="links">
+                            <a href="https://exception3010.github.io/files-privacy-policy/" rel="noopener">Privacy policy</a>
+                        </p>
+                    </div>
+                    <div class="stage" role="group" aria-label="Files screenshots">
+                        <div class="phone"><img src="assets/projects/files-home.webp" width="332" height="531" loading="lazy" decoding="async" alt="Files app home screen, with quick access shortcuts and files grouped by the app they came from"></div>
+                        <div class="phone phone-side phone-l"><img src="assets/projects/files-group.webp" width="244" height="425" loading="lazy" decoding="async" alt="Files app group screen for one app, with its screenshots, images, shorts and videos in separate rows"></div>
+                        <div class="phone phone-side phone-r"><img src="assets/projects/files-select.webp" width="244" height="425" loading="lazy" decoding="async" alt="Files app selection screen with six items selected and a menu offering move, copy and add to group"></div>
+                    </div>
+                </div>
+            </div>
             <div class="grid">
                 <div class="card">
+                    <span class="tile" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="3" width="6" height="5" rx="1.2"/><rect x="2.5" y="16" width="5" height="5" rx="1.2"/><rect x="9.5" y="16" width="5" height="5" rx="1.2"/><rect x="16.5" y="16" width="5" height="5" rx="1.2"/><path d="M12 8v8M5 16v-2.5A1.5 1.5 0 0 1 6.5 12h11a1.5 1.5 0 0 1 1.5 1.5V16"/></svg></span>
                     <h3>MultiTenantManagement</h3>
                     <div class="meta">Team project • C# • ASP.NET Core 8 • PostgreSQL</div>
                     <p class="muted">Multi-tenant ASP.NET Core 8 API where a system admin creates tenants and users, and tenant users manage products; a tenant_id JWT claim is enforced by a custom handler.</p>
-                    <p>
+                    <p class="links">
                         <a href="https://github.com/Exception3010/MultiTenantManagement" rel="noopener">GitHub</a>
                     </p>
                 </div>
                 <div class="card">
-                    <h3>Daftari</h3>
-                    <div class="meta">Android • Kotlin • Google Play</div>
-                    <p class="muted">Arabic debt ledger for shopkeepers to record customer debts and payments offline, with per-customer balances, statements and separate shekel, dinar and dollar ledgers.</p>
-                    <p>
-                        <a href="https://play.google.com/store/apps/details?id=com.exception.debts" rel="noopener">Google Play</a> ·
-                        <a href="https://exception3010.github.io/daftari-site/" rel="noopener">Website</a>
-                    </p>
-                </div>
-                <div class="card">
+                    <span class="tile" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 17 9 11.5l3.5 3.5 7.5-8"/><path d="M15 7h5v5"/></svg></span>
                     <h3>TrendingTracker</h3>
                     <div class="meta">Python • Django • SQLite</div>
                     <p class="muted">Django tool for anyone who wants GitHub’s trending page in a database: one command scrapes it into SQLite and a read-only Django REST Framework endpoint serves the rows.</p>
-                    <p>
+                    <p class="links">
                         <a href="https://github.com/Exception3010/TrendingTracker" rel="noopener">GitHub</a>
                     </p>
                 </div>
                 <div class="card">
+                    <span class="tile" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4.5" width="18" height="15" rx="2.5"/><path d="m7.5 9.5 3 2.5-3 2.5M13 14.5h3.5"/></svg></span>
                     <h3>shell2</h3>
                     <div class="meta">C • POSIX • CMake</div>
                     <p class="muted">Small UNIX-like shell in C, written to learn POSIX process control: in-process built-ins, fork/execvp launching, &amp; backgrounding, and &lt;, &gt; and &gt;&gt; redirection via dup2.</p>
-                    <p>
+                    <p class="links">
                         <a href="https://github.com/Exception3010/shell2" rel="noopener">GitHub</a>
-                    </p>
-                </div>
-                <div class="card">
-                    <h3>Files</h3>
-                    <div class="meta">Android • Unreleased</div>
-                    <p class="muted">Android file manager for people who want their files to stay on the device: no internet permission, no ads, no analytics, no tracking and no accounts.</p>
-                    <p>
-                        <a href="https://exception3010.github.io/files-privacy-policy/" rel="noopener">Privacy policy</a>
                     </p>
                 </div>
             </div>
